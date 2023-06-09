@@ -5,7 +5,7 @@ function App() {
 
 	useEffect(() => {
 		setTimeout(async () => {
-			const response = await fetch("http://localhost:8000/solutions");
+			const response = await fetch("https://kruczek79.github.io/wordle-api/db.json");
 			const data = await response.json();
 			const randomSolu = await data[Math.floor(Math.random() * data.length)];
 			setSolution(randomSolu.word);
