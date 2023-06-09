@@ -5,9 +5,13 @@ function App() {
 
 	useEffect(() => {
 		setTimeout(async () => {
-			const response = await fetch("https://kruczek79.github.io/wordle-api/db.json");
+			const response = await fetch(
+				"https://kruczek79.github.io/wordle-api/db.json"
+			);
 			const data = await response.json();
-			const randomSolu = await data[Math.floor(Math.random() * data.length)];
+			const randomSolu = await data.solutions[
+				Math.floor(Math.random() * data.solutions.length)
+			];
 			setSolution(randomSolu.word);
 		}, 1000);
 	}, [setSolution]);
