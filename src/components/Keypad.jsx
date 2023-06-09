@@ -4,7 +4,7 @@ export default function Keypad({ usedKeys }) {
 	const [letters, setLetters] = useState(null);
 	useEffect(() => {
 		setTimeout(async () => {
-			const response = await fetch("http://localhost:8000/letters");
+			const response = await fetch("https://kruczek79.github.io/wordle-api/letters.json");
 			const data = await response.json();
 			setLetters(data);
 		}, 1000);
